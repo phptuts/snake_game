@@ -1,10 +1,5 @@
 <script>
-  export let top;
-  export let left;
-  export let width;
-  export let height;
-  export let isHead = false;
-  export let direction;
+
 </script>
 
 <style>
@@ -12,22 +7,26 @@
     background-color: green;
     border: black 1px solid;
     position: absolute;
+    width: 50px;
+    height: 50px;
     z-index: 3;
+    top: 0;
+    left: 0;
   }
   .eyes {
     position: absolute;
     background-color: orange;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 20%;
+    height: 20%;
   }
   #leftEye {
-    left: 10px;
-    top: 2px;
+    left: 70%;
+    top: 10%;
   }
   #rightEye {
-    left: 10px;
-    bottom: 2px;
+    left: 70%;
+    bottom: 10%;
   }
   .snake-body.right {
     transform: rotate(0deg);
@@ -36,18 +35,14 @@
     transform: rotate(180deg);
   }
   .snake-body.up {
-    transform: rotate(90deg);
+    transform: rotate(270deg);
   }
   .snake-body.down {
     transform: rotate(90deg);
   }
 </style>
 
-<div
-  style="left: {left}px; top: {top}px; width: {width}px; height: {height}px;"
-  class="snake-body {direction}">
-  {#if isHead}
-    <div id="leftEye" class="eyes" />
-    <div id="rightEye" class="eyes" />
-  {/if}
+<div class="snake-body right">
+  <div id="leftEye" class="eyes" />
+  <div id="rightEye" class="eyes" />
 </div>
